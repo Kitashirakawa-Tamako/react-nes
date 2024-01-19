@@ -2,6 +2,11 @@
   "name": "rollup-react-component",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "main": "es/index.js",
+  "files": [
+    "es/"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
