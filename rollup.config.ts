@@ -19,7 +19,7 @@ const config: RollupOptions = {
   },
   plugins: [
     nodeResolve(),
-    typescript(),
+    typescript({ compilerOptions: { jsx: 'react-jsx' } }),
     commonjs(),
     postcss(),
     image(),
