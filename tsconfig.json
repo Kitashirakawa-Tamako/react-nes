@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "target": "esnext",
     "lib": [
       "dom",
@@ -25,8 +26,7 @@
   },
   "include": [
     "type.d.ts",
-    "./src/",
-    "rollup.config.ts"
+    "./src/"
   ],
   "exclude": [
     "node_modules"

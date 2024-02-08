@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "rollup": "rollup --config rollup.config.ts --configPlugin typescript --bundleConfigAsCjs"
+    "rollup": "rollup --config rollup.config.ts --configPlugin rollup-plugin-typescript2"
   },
   "dependencies": {
     "react": "^18",
@@ -19,9 +19,8 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.6",
     "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -36,7 +35,13 @@
     "rollup": "^4.9.5",
     "rollup-plugin-babel-minify": "^10.0.0",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.70.0",
+    "tslib": "^2.6.2",
     "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "16.8",
+    "react-dom": "16.8"
   }
 }

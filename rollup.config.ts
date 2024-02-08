@@ -1,5 +1,5 @@
 import nodeResolve from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript'
+import typescript from 'rollup-plugin-typescript2'
 import commonjs from '@rollup/plugin-commonjs'
 import { type RollupOptions } from 'rollup'
 import postcss from 'rollup-plugin-postcss'
@@ -11,22 +11,29 @@ const config: RollupOptions = {
   external: ['react', 'react-dom'],
   output: {
     file: 'es/index.js',
-    format: 'es',
+    format: 'esm',
     globals: {
       react: 'React',
       'react-dom': 'ReactDOM'
     }
   },
   plugins: [
+    typescript({
+      tsconfigOverride: {
+        compilerOptions: { jsx: 'react-jsx' },
+        include: [
+          'type.d.ts',
+          'src/components'
+        ]
+      }
+    }),
     nodeResolve(),
-    typescript({ compilerOptions: { jsx: 'react-jsx' } }),
-    commonjs(),
     postcss(),
+    commonjs(),
     image(),
     babelMinify({
       removeConsole: true
     })
-  ],
-  cache: false
+  ]
 }
 export default config
