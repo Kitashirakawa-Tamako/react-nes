@@ -9,7 +9,6 @@ export default function Home (): ReactNode {
   return (
     <>
       <button onClick={() => {
-        // 发起 fetch 请求
         fetch('/超级玛丽.nes').then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`)
