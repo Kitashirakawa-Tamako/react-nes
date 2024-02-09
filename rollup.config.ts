@@ -39,8 +39,8 @@ const removeDir = async (...dirs: string[]): Promise<void> => {
 export default defineConfig(async (/* commandLineArgs */) => {
   await removeDir('es')
   const config: RollupOptions = {
-    input: 'src/components/HelloWorld.tsx',
-    external: ['react', 'react-dom'],
+    input: 'src/components/index.ts',
+    external: ['react', 'react-dom', 'jsnes', 'gamecontroller.js'],
     output: {
       file: 'es/index.js',
       format: 'es',

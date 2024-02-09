@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import HelloWorld from '../components/HelloWorld'
+import ReactNes from '../components/ReactNes'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/HelloWorld',
-  component: HelloWorld,
+  title: 'Example/ReactNes',
+  component: ReactNes,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered'
@@ -15,7 +15,7 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
   }
-} satisfies Meta<typeof HelloWorld>
+} satisfies Meta<typeof ReactNes>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -23,6 +23,6 @@ type Story = StoryObj<typeof meta>
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Demo: Story = {
   args: {
-    text: 'The demo rollup-react-component and storybook'
+
   }
 }
