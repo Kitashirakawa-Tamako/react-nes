@@ -24,33 +24,61 @@ export interface NesGamepad {
   left2: GamepadButton
   right2: GamepadButton
 }
+export interface ReactNesButtons {
+  a1?: string
+  b1?: string
+  select1?: string
+  start1?: string
+  up1?: string
+  down1?: string
+  left1?: string
+  right1?: string
+  a2?: string
+  b2?: string
+  select2?: string
+  start2?: string
+  up2?: string
+  down2?: string
+  left2?: string
+  right2?: string
+}
 
 export interface ReactNesProps {
-  buttons?: {
-    a1?: string
-    b1?: string
-    select1?: string
-    start1?: string
-    up1?: string
-    down1?: string
-    left1?: string
-    right1?: string
-    a2?: string
-    b2?: string
-    select2?: string
-    start2?: string
-    up2?: string
-    down2?: string
-    left2?: string
-    right2?: string
-  }
+  /**
+   * 键盘按键与手柄按钮的对应关系
+   */
+  buttons?: ReactNesButtons
+  /**
+   * 音量大小0-1
+   */
   volume?: number
+  /**
+   * 是否全屏
+   */
   fullScreen?: boolean
+  /**
+   * 宽度
+   */
   width?: number | string
+  /**
+   * 高度
+   */
   height?: number | string
+  /**
+   * 默认填充颜色
+   */
   fillStyle?: string
+  /**
+   * 键盘输入回调
+   */
   onButtonEvent?: (e: GamepadButtonEvent) => void
-  onGamepadConnect?: (gamead: any) => void
+  /**
+   * gamepad api onconnect 事件触发时回调
+   */
+  onGamepadConnect?: (gamepad: any) => void
+  /**
+   * gamepad api ondisconnect 事件触发时回调
+   */
   onGamepadDisconnect?: (id: number) => void
 }
 

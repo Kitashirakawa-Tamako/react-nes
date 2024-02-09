@@ -55,6 +55,9 @@ const nes = new NES({
   }
 })
 
+/**
+ * 一个简单易用的nes虚拟机
+ */
 const ReactNes = forwardRef<ReactNesRef, ReactNesProps>(function ReactNes (props: ReactNesProps, ref): ReactNode {
   const buttonDown = (action: number): void => {
     nes.buttonDown(1, action)
