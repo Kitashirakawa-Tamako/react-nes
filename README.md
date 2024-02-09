@@ -16,4 +16,6 @@ npm run dev
 ### 构建ESM
 npm run rollup
 
-es/index.js
+### 构建文档
+npm run storybook
+
