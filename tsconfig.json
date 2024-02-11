@@ -25,9 +25,8 @@
     }
   },
   "include": [
-    "rollup.config.ts",
-    "./src/",
-    "type.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
   ],
   "exclude": [
     "node_modules"

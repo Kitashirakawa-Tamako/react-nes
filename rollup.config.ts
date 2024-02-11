@@ -54,7 +54,6 @@ export default defineConfig(async (/* commandLineArgs */) => {
         tsconfigOverride: {
           compilerOptions: { jsx: 'react-jsx' },
           include: [
-            '',
             './src/components',
             'type.d.ts'
           ]
