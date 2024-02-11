@@ -6,13 +6,7 @@
     "extends": [
         "standard-with-typescript",
         "plugin:react/recommended",
-        "plugin:react/jsx-runtime",
-        "plugin:storybook/recommended",
-        "plugin:storybook/recommended",
-        "plugin:storybook/recommended",
-        "plugin:storybook/recommended",
-        "plugin:storybook/recommended",
-        "plugin:storybook/recommended"
+        "plugin:react/jsx-runtime"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
