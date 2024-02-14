@@ -83,8 +83,8 @@ export interface ReactNesProps {
 }
 
 export interface ReactNesRef {
-  buttonDown: (action: number) => void
-  buttonUp: (action: number) => void
+  buttonDown: (controller: number, button: number) => void
+  buttonUp: (controller: number, button: number) => void
   saveData: () => NesData
   loadData: (data: NesData) => void
   reset: () => void

@@ -2,12 +2,12 @@ import { type NesData, type ReactNesRef } from '@/components/interface'
 import { useState, type ReactNode, useRef } from 'react'
 import { ReactNes, VirtualGamepad } from '@/components'
 
-export default function Home (): ReactNode {
+export default function Demo (): ReactNode {
   const [volume, setVolume] = useState(1)
   const [fullScreen, setFullScreen] = useState(false)
   const ref = useRef<ReactNesRef>(null)
   return (
-    <>
+    <div className="demo">
       <button onClick={() => {
         fetch('/超级玛丽.nes').then((response) => {
           if (!response.ok) {
@@ -29,14 +29,14 @@ export default function Home (): ReactNode {
           .catch((error) => {
             console.error('Error occurred while fetching the blob object:', error)
           })
-      }}>加载rom</button>
+      }}>加载游戏</button>
       <button onClick={(e) => {
         if (volume === 0) {
           setVolume(1)
         } else {
           setVolume(0)
         }
-      }}>音量</button>
+      }}>音量{volume}</button>
       <button onClick={() => {
         setFullScreen(!fullScreen)
       }}>全屏</button>
@@ -69,6 +69,6 @@ export default function Home (): ReactNode {
       <div style={{ marginTop: 10, width: 400 }}>
         <VirtualGamepad nesRef={ref} />
       </div>
-    </>
+    </div>
   )
 }

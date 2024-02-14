@@ -1,8 +1,8 @@
 export default {
   index: {
-    title: '介绍',
+    title: '介绍'
   },
   demo: {
-    title: '例子',
+    title: '例子'
   }
 }

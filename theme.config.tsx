@@ -1,9 +1,9 @@
 import type { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>rollup-react-component</span>,
+  logo: <span>React Nes</span>,
   project: {
-    link: 'https://github.com/Kitashirakawa-Tamako/rollup-react-component.git',
+    link: 'https://github.com/Kitashirakawa-Tamako/react-nes'
   },
   i18n: [
     { locale: 'en-US', name: 'English' },

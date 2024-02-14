@@ -14,7 +14,6 @@ import { existsSync } from 'fs'
 const removeDir = async (...dirs: string[]): Promise<void> => {
   for (const dir of dirs) {
     const absolutePath = resolve(dir)
-    console.log(absolutePath)
     if (existsSync(absolutePath)) {
       const dirStack = [absolutePath]
       while (dirStack.length > 0) {

@@ -1,7 +1,11 @@
 {
-  "name": "rollup-react-component",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-nes",
+  "version": "0.0.1",
+  "description": "A React wrapper component of jsnes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kitashirakawa-Tamako/react-nes"
+  },
   "main": "es/index.js",
   "files": [
     "es/"
@@ -15,8 +19,7 @@
   },
   "dependencies": {
     "gamecontroller.js": "^1.5.0",
-    "jsnes": "^1.2.1",
-    "nextra": "^3.0.0-alpha.17"
+    "jsnes": "^1.2.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",

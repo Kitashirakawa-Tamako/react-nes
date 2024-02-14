@@ -1,7 +1,7 @@
 import { useState, type ReactNode, useRef, useEffect } from 'react'
 import style from './VirtualGamepad.module.scss'
 import { type VirtualGamepadProps } from './interface'
-import { Controller } from 'jsnes'
+import { Buttons, Controllers } from './enum'
 
 function VirtualGamepad (props: VirtualGamepadProps): ReactNode {
   const gamePadRef = useRef<HTMLDivElement>(null)
@@ -10,42 +10,42 @@ function VirtualGamepad (props: VirtualGamepadProps): ReactNode {
   const onArrowDown = (direction: string): void => {
     if (direction === 'up') {
       setRotate('rotateX(15deg)')
-      onButtonDown(Controller.BUTTON_UP)
+      onButtonDown(Buttons.BUTTON_UP)
     }
     if (direction === 'down') {
       setRotate('rotateX(-15deg)')
-      onButtonDown(Controller.BUTTON_DOWN)
+      onButtonDown(Buttons.BUTTON_DOWN)
     }
     if (direction === 'left') {
       setRotate('rotateY(-15deg)')
-      onButtonDown(Controller.BUTTON_LEFT)
+      onButtonDown(Buttons.BUTTON_LEFT)
     }
     if (direction === 'right') {
       setRotate('rotateY(15deg)')
-      onButtonDown(Controller.BUTTON_RIGHT)
+      onButtonDown(Buttons.BUTTON_RIGHT)
     }
   }
   const onArrowUp = (direction: string): void => {
     if (direction === 'up') {
-      onButtonUp(Controller.BUTTON_UP)
+      onButtonUp(Buttons.BUTTON_UP)
     }
     if (direction === 'down') {
-      onButtonUp(Controller.BUTTON_DOWN)
+      onButtonUp(Buttons.BUTTON_DOWN)
     }
     if (direction === 'left') {
-      onButtonUp(Controller.BUTTON_LEFT)
+      onButtonUp(Buttons.BUTTON_LEFT)
     }
     if (direction === 'right') {
-      onButtonUp(Controller.BUTTON_RIGHT)
+      onButtonUp(Buttons.BUTTON_RIGHT)
     }
     setRotate('none')
   }
 
-  const onButtonDown = (action: any): void => {
-    props.nesRef.current?.buttonDown(action as number)
+  const onButtonDown = (button: any): void => {
+    props.nesRef.current?.buttonDown(Controllers.P1, button as number)
   }
-  const onButtonUp = (action: any): void => {
-    props.nesRef.current?.buttonUp(action as number)
+  const onButtonUp = (button: any): void => {
+    props.nesRef.current?.buttonUp(Controllers.P1, button as number)
   }
 
   useEffect(() => {
@@ -84,12 +84,12 @@ function VirtualGamepad (props: VirtualGamepadProps): ReactNode {
               </div>
             </div>
             <div className={style['function-pad']}>
-              <div className={style['button-select']} onMouseDown={() => { onButtonDown(Controller.BUTTON_SELECT) }} onMouseUp={() => { onButtonUp(Controller.BUTTON_SELECT) }} onTouchStart={() => { onButtonDown(Controller.BUTTON_SELECT) }} onTouchEnd={() => { onButtonUp(Controller.BUTTON_SELECT) }}></div>
-              <div className={style['button-start']} onMouseDown={() => { onButtonDown(Controller.BUTTON_START) }} onMouseUp={() => { onButtonUp(Controller.BUTTON_START) }} onTouchStart={() => { onButtonDown(Controller.BUTTON_START) }} onTouchEnd={() => { onButtonUp(Controller.BUTTON_START) }}></div>
+              <div className={style['button-select']} onMouseDown={() => { onButtonDown(Buttons.BUTTON_SELECT) }} onMouseUp={() => { onButtonUp(Buttons.BUTTON_SELECT) }} onTouchStart={() => { onButtonDown(Buttons.BUTTON_SELECT) }} onTouchEnd={() => { onButtonUp(Buttons.BUTTON_SELECT) }}></div>
+              <div className={style['button-start']} onMouseDown={() => { onButtonDown(Buttons.BUTTON_START) }} onMouseUp={() => { onButtonUp(Buttons.BUTTON_START) }} onTouchStart={() => { onButtonDown(Buttons.BUTTON_START) }} onTouchEnd={() => { onButtonUp(Buttons.BUTTON_START) }}></div>
             </div>
             <div className={style['action-pad']}>
-              <div className={style['button-b']} onMouseDown={() => { onButtonDown(Controller.BUTTON_B) }} onMouseUp={() => { onButtonUp(Controller.BUTTON_B) }} onTouchStart={() => { onButtonDown(Controller.BUTTON_B) }} onTouchEnd={() => { onButtonUp(Controller.BUTTON_B) }}></div>
-              <div className={style['button-a']} onMouseDown={() => { onButtonDown(Controller.BUTTON_A) }} onMouseUp={() => { onButtonUp(Controller.BUTTON_A) }} onTouchStart={() => { onButtonDown(Controller.BUTTON_A) }} onTouchEnd={() => { onButtonUp(Controller.BUTTON_A) }}></div>
+              <div className={style['button-b']} onMouseDown={() => { onButtonDown(Buttons.BUTTON_B) }} onMouseUp={() => { onButtonUp(Buttons.BUTTON_B) }} onTouchStart={() => { onButtonDown(Buttons.BUTTON_B) }} onTouchEnd={() => { onButtonUp(Buttons.BUTTON_B) }}></div>
+              <div className={style['button-a']} onMouseDown={() => { onButtonDown(Buttons.BUTTON_A) }} onMouseUp={() => { onButtonUp(Buttons.BUTTON_A) }} onTouchStart={() => { onButtonDown(Buttons.BUTTON_A) }} onTouchEnd={() => { onButtonUp(Buttons.BUTTON_A) }}></div>
             </div>
           </div>
         </div>
