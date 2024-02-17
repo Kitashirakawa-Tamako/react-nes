@@ -11,7 +11,7 @@ export default function Demo (): ReactNode {
     <div className="demo">
       <div>
         <button onClick={() => {
-          fetch('/超级玛丽.nes').then((response) => {
+          fetch('/react-nes/超级玛丽.nes').then((response) => {
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`)
             }

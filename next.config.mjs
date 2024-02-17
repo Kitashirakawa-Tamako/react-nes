@@ -11,6 +11,7 @@ const withNextra = nextra({
 })
 
 export default withNextra({
+  basePath: '/react-nes',
   output: 'export',
   eslint: {
     // Eslint behaves weirdly in this monorepo.
