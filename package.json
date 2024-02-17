@@ -1,5 +1,5 @@
 {
-  "name": "react-nes",
+  "name": "@kitashirakawa_tamako/react-nes",
   "version": "1.0.0",
   "description": "A React wrapper component of jsnes",
   "repository": {
@@ -7,7 +7,6 @@
     "url": "https://github.com/Kitashirakawa-Tamako/react-nes"
   },
   "main": "es/index.js",
-  "types": "es/index.d.ts",
   "files": [
     "es/"
   ],
