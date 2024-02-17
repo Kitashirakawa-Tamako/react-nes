@@ -28,7 +28,7 @@ export default withNextra({
   redirects: () => [
     {
       source: '/',
-      destination: '/zh-CN',
+      destination: '/react-nes/zh-CN',
       permanent: true
     }
   ]
