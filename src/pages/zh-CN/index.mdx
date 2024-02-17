@@ -44,20 +44,12 @@ const ref = useRef(null)
 
 ## API
 
-### enum
+### Enum
 
 #### Buttons
 ```js
 import { Buttons } from 'react-nes'
 {
-    "0": "BUTTON_A",
-    "1": "BUTTON_B",
-    "2": "BUTTON_SELECT",
-    "3": "BUTTON_START",
-    "4": "BUTTON_UP",
-    "5": "BUTTON_DOWN",
-    "6": "BUTTON_LEFT",
-    "7": "BUTTON_RIGHT",
     "BUTTON_A": 0,
     "BUTTON_B": 1,
     "BUTTON_SELECT": 2,
@@ -72,8 +64,6 @@ import { Buttons } from 'react-nes'
 ```js
 import { Controllers } from 'react-nes'
 {
-    "1": "P1",
-    "2": "P2",
     "P1": 1,
     "P2": 2
 }
@@ -85,8 +75,8 @@ import { Controllers } from 'react-nes'
 | buttons             | 键盘按键与手柄按钮的对应关系            | ReactNesButtons                 | -      |      |
 | volume              | 音量大小0-1                             | number                          | 0.5    |      |
 | fullScreen          | 是否全屏                                | boolean                         | false  |      |
-| width               | 宽度                                    | number \| string                | 256    |      |
-| height              | 高度                                    | number \| string                | 240    |      |
+| width               | 画面宽度                                    | number \| string                | 256    |      |
+| height              | 画面高度                                    | number \| string                | 240    |      |
 | fillStyle           | 默认填充颜色                            | string                          | #000   |      |
 | onButtonEvent       | 键盘输入回调                            | (e: GamepadButtonEvent) => void | -      |      |
 | onGamepadConnect    | gamepad api onconnect 事件触发时回调    | (gamepad: any) => void          | -      |      |
@@ -129,8 +119,7 @@ import { Controllers } from 'react-nes'
 | type       | 松开/按下      | 'keyup' \| 'keydown'  | -      |      |
 | button     | 手柄按键枚举值 | number                | -      |      |
 | code       | 键盘按键code码 | KeyboardEvent.code    | -      |      |
-| controller | 玩家           | number                | -      |      |
-| loadRom    | 加载游戏资源   | (rom: string) => void | -      |      |
+| controller | 玩家 1/2       | number                | -      |      |
 
 ### NesData
 | 属性    | 说明 | 类型   | 默认值 | 版本 |

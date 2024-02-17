@@ -21,13 +21,13 @@ export default withNextra({
   },
   distDir: './.next',
   i18n: {
-    locales: ['en-US', 'zh-CN'],
-    defaultLocale: 'en-US'
+    locales: ['zh-CN','en-US'],
+    defaultLocale: 'zh-CN'
   },
   redirects: () => [
     {
       source: '/',
-      destination: '/en-US',
+      destination: '/zh-CN',
       permanent: true
     }
   ]

@@ -1,3 +1,131 @@
-# Docs
+import { Tabs } from 'nextra/components'
+import { ReactNes } from '@/components/ReactNes'
+
+# React Nes
  
-Here is docs.
+React wrapper component for Jsnes. 
+
+## Features 
+
+* Runs ROMs based on JSNES 
+* Supports keyboard and gamepad input 
+* Built-in virtual gamepad 
+* Supports game save and load progress
+
+## Install
+
+```shell
+npm install react-nes
+```
+
+## Start
+
+### Emulator
+
+```js
+import { ReactNes } from 'react-nes'
+```
+
+```js
+<ReactNes />
+```
+
+### Virtual gamepad
+
+```js
+import { ReactNes, VirtualGamepad } from 'react-nes'
+```
+```js
+const ref = useRef(null)
+```
+```js
+<ReactNes ref={ref}/>
+<VirtualGamepad nesRef={ref} />
+```
+
+## API
+
+### Enum
+
+#### Buttons
+```js
+import { Buttons } from 'react-nes'
+{
+    "BUTTON_A": 0,
+    "BUTTON_B": 1,
+    "BUTTON_SELECT": 2,
+    "BUTTON_START": 3,
+    "BUTTON_UP": 4,
+    "BUTTON_DOWN": 5,
+    "BUTTON_LEFT": 6,
+    "BUTTON_RIGHT": 7
+}
+```
+#### Controllers
+```js
+import { Controllers } from 'react-nes'
+{
+    "P1": 1,
+    "P2": 2
+}
+```
+### ReactNesProps
+
+| Property                | Description                                    | Type                            | Default | Version |
+| ------------------- | --------------------------------------- | ------------------------------- | ------ | ---- |
+| buttons             | The correspondence between keyboard buttons and handle buttons            | ReactNesButtons                 | -      |      |
+| volume              | Volume size 0-1                             | number                          | 0.5    |      |
+| fullScreen          | Full screen or not                                | boolean                         | false  |      |
+| width               | Screen width                                    | number \| string                | 256    |      |
+| height              | Screen height                                    | number \| string                | 240    |      |
+| fillStyle           | Default Fill Color                            | string                          | #000   |      |
+| onButtonEvent       | Keyboard input callback                            | (e: GamepadButtonEvent) => void | -      |      |
+| onGamepadConnect    | Callback when the gamepad API reconnect event is triggered    | (gamepad: any) => void          | -      |      |
+| onGamepadDisconnect | Callback when the gamepad API ondisconnect event is triggered | (id: number) => void            | -      |      |
+
+### ReactNesRef
+
+| Property    | Description       | Type               | Default     | Version |
+| ------- | ---------- | ------------------ | ---------- | ---- |
+| buttonDown | Press the button to input | (controller: number, button: number) => void | -      |      |
+| buttonUp | Key release input | (controller: number, button: number) => void | -      |      |
+| saveData | Save game progress | () => NesData | -            |      |
+| loadData | Load game progress | (data: NesData) => void | -       |      |
+| reset | Reset virtual | () => void | -       |      |
+| loadRom | Load game resources | (rom: string) => void | -       |      |
+
+### ReactNesButtons
+| Property    | Description       | Type               | Default     | Version |
+| ------- | ---------- | ------------------ | ---------- | ---- |
+| a1      | P1 attack key A  | KeyboardEvent.code | 'KeyJ'       |      |
+| b1      | P1 attack key B  | KeyboardEvent.code | 'KeyK'       |      |
+| select1 | P1 select key   | KeyboardEvent.code | 'KeyF'       |      |
+| start1  | P1 start key   | KeyboardEvent.code | 'KeyH'       |      |
+| up1     | P1 up arrow key | KeyboardEvent.code | 'KeyW'       |      |
+| down1   | P1 down arrow key | KeyboardEvent.code | 'KeyS'       |      |
+| left1   | P1 left arrow key | KeyboardEvent.code | 'KeyA'       |      |
+| right1  | P1 right arrow key | KeyboardEvent.code | 'KeyD'       |      |
+| a2      | P2 attack key A  | KeyboardEvent.code | 'Numpad1'    |      |
+| b2      | P2 attack key B  | KeyboardEvent.code | 'Numpad2'    |      |
+| select2 | P2 select key   | KeyboardEvent.code | 'Numpad4'    |      |
+| start2  | P2 start key   | KeyboardEvent.code | 'Numpad5'    |      |
+| up2     | P2 up arrow key | KeyboardEvent.code | 'ArrowUp'    |      |
+| down2   | P2 down arrow key | KeyboardEvent.code | 'ArrowDown'  |      |
+| left2   | P2 left arrow key | KeyboardEvent.code | 'ArrowLeft'  |      |
+| right2  | P2 right arrow key | KeyboardEvent.code | 'ArrowRight' |      |
+
+### GamepadButtonEvent
+| Property       | Description           | Type                  | Default | Version |
+| ---------- | -------------- | --------------------- | ------ | ---- |
+| type       | Release/Press      | 'keyup' \| 'keydown'  | -      |      |
+| button     | Handle button enum value | number                | -      |      |
+| code       | Keyboard key code | KeyboardEvent.code    | -      |      |
+| controller | player 1/2           | number                | -      |      |
+
+### NesData
+| Property    | Description | Type   | Default | Version |
+| ------- | ---- | ------ | ------ | ---- |
+| cpu     | -    | object | -      |      |
+| mmap    | -    | object | -      |      |
+| ppu     | -    | object | -      |      |
+| romData | -    | string | -      |      |

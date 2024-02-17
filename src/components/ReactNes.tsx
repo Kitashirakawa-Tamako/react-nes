@@ -215,23 +215,6 @@ const ReactNes = forwardRef<ReactNesRef, ReactNesProps>(function ReactNes (props
     gainNode.connect(audioCtx.destination)
     scriptNode.connect(gainNode)
     timer = setInterval(onFrame, 16.7)
-    document.onkeydown = (e) => {
-      for (let i = 0; i < buttons.length; i++) {
-        if (buttons[i].code === e.code) {
-          nes.buttonDown(buttons[i].controller, buttons[i].button)
-          props.onButtonEvent?.({ type: 'keydown', ...buttons[i] })
-        }
-      }
-    }
-
-    document.onkeyup = (e) => {
-      for (let i = 0; i < buttons.length; i++) {
-        if (buttons[i].code === e.code) {
-          nes.buttonUp(buttons[i].controller, buttons[i].button)
-          props.onButtonEvent?.({ type: 'keyup', ...buttons[i] })
-        }
-      }
-    }
   }
 
   useEffect(() => {
@@ -289,6 +272,26 @@ const ReactNes = forwardRef<ReactNesRef, ReactNesProps>(function ReactNes (props
       canvas.current?.requestFullscreen().catch(() => { })
     }
   }, [props.fullScreen])
+
+  useEffect(() => {
+    document.onkeydown = (e) => {
+      for (let i = 0; i < buttons.length; i++) {
+        if (buttons[i].code === e.code) {
+          nes.buttonDown(buttons[i].controller, buttons[i].button)
+          props.onButtonEvent?.({ type: 'keydown', ...buttons[i] })
+        }
+      }
+    }
+
+    document.onkeyup = (e) => {
+      for (let i = 0; i < buttons.length; i++) {
+        if (buttons[i].code === e.code) {
+          nes.buttonUp(buttons[i].controller, buttons[i].button)
+          props.onButtonEvent?.({ type: 'keyup', ...buttons[i] })
+        }
+      }
+    }
+  }, [props.buttons])
 
   return (
     <>
