@@ -2,6 +2,8 @@
  
 Jsnes的React封装组件。
 
+[Demo](https://kitashirakawa-tamako.github.io/react-nes/zh-CN/demo)
+
 ## 特性
 * ROM 基于 JSNES 运行
 * 支持键盘输入和手柄输入
