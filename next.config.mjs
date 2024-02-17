@@ -11,6 +11,7 @@ const withNextra = nextra({
 })
 
 export default withNextra({
+  output: 'export',
   eslint: {
     // Eslint behaves weirdly in this monorepo.
     ignoreDuringBuilds: true
@@ -19,7 +20,6 @@ export default withNextra({
   images: {
     unoptimized: true,
   },
-  distDir: './.next',
   i18n: {
     locales: ['zh-CN','en-US'],
     defaultLocale: 'zh-CN'
