@@ -13,7 +13,7 @@ Jsnes的React封装组件。
 ## 安装
 
 ```shell
-npm install react-nes
+npm install @kitashirakawa_tamako/react-nes
 ```
 
 ## 开始
@@ -21,7 +21,7 @@ npm install react-nes
 ### 模拟器
 
 ```js
-import { ReactNes } from 'react-nes'
+import { ReactNes } from '@kitashirakawa_tamako/react-nes'
 ```
 
 ```js
@@ -31,7 +31,7 @@ import { ReactNes } from 'react-nes'
 ### 虚拟手柄
 
 ```js
-import { ReactNes, VirtualGamepad } from 'react-nes'
+import { ReactNes, VirtualGamepad } from '@kitashirakawa_tamako/react-nes'
 ```
 ```js
 const ref = useRef(null)
@@ -47,7 +47,7 @@ const ref = useRef(null)
 
 #### Buttons
 ```js
-import { Buttons } from 'react-nes'
+import { Buttons } from '@kitashirakawa_tamako/react-nes'
 {
     "BUTTON_A": 0,
     "BUTTON_B": 1,
@@ -61,7 +61,7 @@ import { Buttons } from 'react-nes'
 ```
 #### Controllers
 ```js
-import { Controllers } from 'react-nes'
+import { Controllers } from '@kitashirakawa_tamako/react-nes'
 {
     "P1": 1,
     "P2": 2
