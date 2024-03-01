@@ -259,6 +259,9 @@ const ReactNes = forwardRef<ReactNesRef, ReactNesProps>(function ReactNes (props
     gameControl.on('disconnect', function (id: number) {
       props.onGamepadDisconnect?.(id)
     })
+    return () => {
+      reset()
+    }
   }, [])
 
   useEffect(() => {
