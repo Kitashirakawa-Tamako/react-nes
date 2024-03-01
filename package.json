@@ -1,6 +1,6 @@
 {
   "name": "@kitashirakawa_tamako/react-nes",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A React wrapper component of jsnes",
   "repository": {
     "type": "git",
